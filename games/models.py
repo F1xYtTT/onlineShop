@@ -1,6 +1,7 @@
 from turtle import title
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.urls import reverse 
 
 
 class Game(models.Model):
@@ -11,7 +12,14 @@ class Game(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     created = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
-    def __str__(self):
-        return f'{self.title}'
+    image = models.ImageField(blank=True)
 
-# Create your models here.
+    def get_absolute_url(self):
+        return reverse('game_detail', args=[self.slug])
+
+    
+
+    def __str__(self):
+        return f'{self.title}' 
+
+
