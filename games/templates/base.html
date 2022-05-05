@@ -16,7 +16,19 @@
 
 <body>
 
+    <div class="login-logout-reg-nav">
+        {% if user.is_authenticated%}
+            Добро пожаловать, {{ user.first_name }}!
+            <a href="{% url 'logout' %}">Выйти из аккаунта</a>
+        {% else %}
+            <a href="{% url 'login' %}">Войти на сайт</a>
+        {% endif %}
+    
+        </div>
+
 {% block content %}
+
+
 
 {% endblock content %}
 

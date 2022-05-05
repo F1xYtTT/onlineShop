@@ -88,7 +88,9 @@ img {
     color:magenta;
     
 }
-.login-form input[type=submit], .signup-form input[type = submit]{
+.login-form input[type=submit], .signup-form input[type = submit], .password-change-form input[type=submit],.password-reset-form input[type=submit]
+
+{
     font-weight: bold;
 
     background-color: violet;
@@ -99,14 +101,17 @@ img {
 
     width: auto;
 }
-.login-form label, .signup-form label{
+.login-form label, .signup-form label, .password-change-form label,.password-reset-form label
+
+{
 
     display: block;
 
     font-size: 20px;
 
 }
-.login-form input, textarea, .signup-form input {
+.login-form input, textarea, .signup-form input, .password-change-form input,.password-reset-form input
+{
     margin-bottom: 10px;
 
     background-color: ghostwhite;
@@ -120,7 +125,8 @@ img {
     width: 30%;
 
 }
-.login-heading, .signup-heading { 
+.login-heading, .signup-heading, .password-change-heading,.password-reset-heading
+{
 
     font-weight: normal;
     
@@ -128,7 +134,8 @@ img {
     
     }
 
-.login-para, .signup-para { 
+.login-para, .signup-para, .password-change-para, .password-reset-para
+{ 
 
     font-size: 20px;
         
