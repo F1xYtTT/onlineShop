@@ -11,7 +11,7 @@ class Game(models.Model):
     slug = models.SlugField(unique=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     created = models.DateTimeField(auto_now_add=True)
-    update = models.DateTimeField(auto_now=True)
+    update = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(blank=True)
 
     def get_absolute_url(self):

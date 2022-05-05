@@ -7,8 +7,22 @@
 {% endblock title %}
 
 {% block content %}
+    <div class="nav">
+
+        <h1>Game Shop</h1>
+    
+        <div class="login-logout-reg-nav">
+        {% if user.is_authenticated%}
+            Добро пожаловать, {{ user.first_name }}!
+            <a href="{% url 'logout' %}">Выйти из аккаунта</a>
+        {% else %}
+            <a href="{% url 'login' %}">Войти на сайт</a>
+        {% endif %}
+    
+        </div>
 
     {% for game in game_list %}
+
     <div class="game">
         <h2><a href="{{ game.get_absolute_url }}">{{ game.title }}</a></h2>
         <a href="{{ game.get_absolute_url }}"> <img src="{{ game.image.url }}">
@@ -16,10 +30,15 @@
 
         <p class="game-date">Дата последнего обновления записи: {{ game.updated }}</p>
 
+        <p class="price"> Цена игре составляет {{ game.price}} ₽ </p>
+
         <h3>Описание игры</h3> <p>{{ game.description }}</p>
+
+        
 
 
     </div>
     {% endfor %}
+
 
 {% endblock content %}

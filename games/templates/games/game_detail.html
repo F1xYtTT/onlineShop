@@ -4,5 +4,15 @@
 Game Shop
 {% endblock title %}
 {% block content %}
+<h1 class="game-detail-title1">{{ game.title}}</h1>
+{% if game.image %}
+<a href="{{game.get_absolute_url}}"> <img src="{{ game.image.url}}"> </a> 
+{% endif %}
+<h2 class="game-detail-title-2"> Игра добавлена пользователем {{ game.owner }}</h2>
+<h2 class="game-detail-title-2">Дата последнего обновления записи: {{ game.created }}</h2>
+<h2 class="game-detail-title-2"> Описание игры </h2> <p>{{ game.description }}</p>
+<h2 class="game-detail-title-2"> Комментарии к игре </h2>
+<p><a href={% url 'home'%}> Вернуться на главную </a> </p>
+
 
 {% endblock content %}
