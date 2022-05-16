@@ -18,7 +18,7 @@
 
     <div class="login-logout-reg-nav">
         {% if user.is_authenticated%}
-            Добро пожаловать, {{ user.first_name }}!
+            Добро пожаловать, {{ user.username }}!
             <a href="{% url 'logout' %}">Выйти из аккаунта</a>
         {% else %}
             <a href="{% url 'login' %}">Войти на сайт</a>
